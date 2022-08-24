@@ -8,8 +8,8 @@ spec:
     app: $BUILD_NUMBER
   ports:
   - protocol: TCP
-    port: 8080
-    targetPort: 8080
+    port: 808+$BUILD_NUMBER
+    targetPort: 808+$BUILD_NUMBER
     nodePort: 8080
 
 ---
@@ -34,6 +34,5 @@ spec:
       - name: test-container
         image: $DOCKER_IMAGE_NAME:$BUILD_NUMBER
         ports:
-        - containerPort: 8080
-        ports:
-        - containerPort: 8080
+        - containerPort: 808+$BUILD_NUMBER
+
