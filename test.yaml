@@ -10,7 +10,7 @@ spec:
   - protocol: TCP
     port: $BUILD_NUMBER
     targetPort: $BUILD_NUMBER
-    nodePort: 8080
+    nodePort: $BUILD_NUMBER
 
 ---
 
