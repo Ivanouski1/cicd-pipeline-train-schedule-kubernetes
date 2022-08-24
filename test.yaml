@@ -30,20 +30,6 @@ spec:
       labels:
         app: test
     spec:
-      tolerations:
-      - key: node-role.kubernetes.io/master
-        operator: Exists
-        effect: NoSchedule
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - test
-            topologyKey: "kubernetes.io/hostname"
       containers:
       - name: train-schedule
         image: $DOCKER_IMAGE_NAME:$BUILD_NUMBER
