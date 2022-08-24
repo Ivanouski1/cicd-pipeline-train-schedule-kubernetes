@@ -31,7 +31,9 @@ spec:
         app: test
     spec:
       containers:
-      - name: train-schedule
+      - name: test-container
         image: $DOCKER_IMAGE_NAME:$BUILD_NUMBER
+        ports:
+        - containerPort: 8080
         ports:
         - containerPort: 8080
